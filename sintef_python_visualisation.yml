@@ -1,0 +1,14 @@
+name: sintef-python-course
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - jupyterlab
+  - matplotlib
+  - plotly
+  - bokeh
+  - ipykernel
+  - pandas
+  - ipywidgets
+  - nodejs
+

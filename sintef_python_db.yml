@@ -1,0 +1,10 @@
+name: sintef-python-course-db
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - django
+  - sqlalchemy
+  - psycopg2
+  - ipykernel
+
