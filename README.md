@@ -68,7 +68,12 @@ conda install -c anaconda django
 conda install -c anaconda sqlalchemy
 conda install -c anaconda psycopg2
 ```
+Also in this environment we want to use Jupyter Notebooks via Jupyterlab.
+Therefore, we need to install the required packages here as well.
 
+```
+conda install -c conda-forge jupyterlab
+```
 
 ## Getting started
 
