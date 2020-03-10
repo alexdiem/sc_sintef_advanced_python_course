@@ -32,7 +32,7 @@ Welcome to the course material for _Advanced Python3: Object oriented programmin
 
 ## Requirements and installation instructions
 
-The course is based on Python 3 and covers django, sqlalchemy, psycopg, Matplotlib, Plotly, and Bokeh libraries. The course material is provided as Jupyter Notebooks.
+The course is based on Python 3 and covers django, sqlalchemy, psycopg, Matplotlib, Plotly, and Bokeh libraries. The course material is provided as Jupyter Notebooks. We recommend that you try to install the libraries using this guide before the course so that it is easier for you to use the material after the course. However, in case you have not been able to do so for any reason, we have set up a JupyterHub server that you will be able to connect to. You will get information on how to access the server during the course.
 
 We strongly recommend using [Anaconda](https://www.anaconda.com/distribution/) to set up a dedicated virtual environment for the course material. This avoids potential conflicts between the libraries required for the practical parts of the course and any previously installed Python libraries. To set up a new conda environment and activate it run
 ```
@@ -74,6 +74,7 @@ Therefore, we need to install the required packages here as well.
 ```
 conda install -c conda-forge jupyterlab
 ```
+
 
 ## Getting started
 
