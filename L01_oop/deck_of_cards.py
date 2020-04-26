@@ -17,8 +17,6 @@ class Card(object):
         
 class Deck(object):
     
-    import random
-    
     def __init__(self):
         self.cards = []
         for suit in range(4):
@@ -26,13 +24,18 @@ class Deck(object):
                 self.cards.append(Card(suit, val))
                 
     def shuffle(self):
+        import random
         random.shuffle(self.cards)
+        print(f"The deck has been shuffled.")
         
     def draw(self, N):
         drawn = []
         for i in range(N):
             drawn.append(self.suit.pop())
         return drawn
+    
+    def see_cards(self):
+        print(self.cards)
         
 
 class Player(object):
