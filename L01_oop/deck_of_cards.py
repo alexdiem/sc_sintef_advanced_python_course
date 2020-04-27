@@ -1,4 +1,3 @@
-class Card(object):
     
     # Encoding for suits: 0 - spades, 1 - hearts, 2 - diamonds, 3 - clubs
     # Encoding for values: 11 - jack, 12 - queen, 13 - king, 1 - ace
@@ -43,9 +42,13 @@ class Deck(object):
 
 class Player(object):
     
-    def __init__(self, deck, hand_size):
+    def __init__(self, name, deck, hand_size):
+        self._name = name
         self.deck = deck
         self.hand = self.deck.draw(hand_size)
+        
+    def get_name(self):
+        return self._name
         
     def shuffle_deck(self):
         self.deck.shuffle()
@@ -57,5 +60,7 @@ class Player(object):
         for i in range(N):
             self.hand.pop()
             
+    def __repr__(self):
+        return f"{self._name}'s hand is " + str(self.hand)    
 
             
