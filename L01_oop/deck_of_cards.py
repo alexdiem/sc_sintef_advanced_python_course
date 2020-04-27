@@ -12,7 +12,7 @@ class Card(object):
         self.val = val
         
     def __repr__(self):
-        return f"{vals[self.val]} of {suits[self.suit]}"
+        return f"{self.vals[self.val]} of {self.suits[self.suit]}"
         
         
 class Deck(object):
@@ -23,6 +23,9 @@ class Deck(object):
             for val in range(1,14):
                 self.cards.append(Card(suit, val))
                 
+    def __len__(self):
+        return len(self.cards)
+                
     def shuffle(self):
         import random
         random.shuffle(self.cards)
@@ -31,7 +34,7 @@ class Deck(object):
     def draw(self, N):
         drawn = []
         for i in range(N):
-            drawn.append(self.suit.pop())
+            drawn.append(self.cards.pop())
         return drawn
     
     def see_cards(self):
@@ -51,7 +54,8 @@ class Player(object):
         self.hand += self.deck.draw(N)
         
     def discard(self, N):
-        discard = []
         for i in range(N):
-            discard.append(self.hand.pop())
+            self.hand.pop()
+            
+
             
