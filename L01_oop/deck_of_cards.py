@@ -1,4 +1,4 @@
-    
+class Card(object):    
     # Encoding for suits: 0 - spades, 1 - hearts, 2 - diamonds, 3 - clubs
     # Encoding for values: 11 - jack, 12 - queen, 13 - king, 1 - ace
     
@@ -63,4 +63,46 @@ class Player(object):
     def __repr__(self):
         return f"{self._name}'s hand is " + str(self.hand)    
 
+
+class CardGame(object):
+    def __init__(self, players, deck):
+        self.players = players
+        self.deck = deck
+        self.playground = []
+        self.leading_suit = -1
+    
+    def play_round(self):
+        self.leading_suit = -1
+        is_first_player = True
+        for player in self.players:
+            card = player.play_card(self, self.leading_suit)
+            if is_first_player:
+                self.leading_suit = card.suit
             
+            is_first_player = False
+        self.playground = []
+
+
+class Hearts(CardGame):
+    def __init__(self, players, deck):
+        super().__init__(players, deck)
+        self.tricks = []
+        
+        
+    def win_trick(self):
+        highest_card = self.playground[0]
+        winning_player = 0
+        for i in range(1, len(self.playground)):
+            if highest_card.trumped(self.leading_suit, self.playground[i]):
+                highest_card = self.playground[i]
+                winning_player = i
+        self.tricks.append[i]
+        
+        
+    def play_round(self):
+        super().__init__(players, deck)
+        self.win_trick()
+            
+
+class OhHell(CardGame):
+    pass
