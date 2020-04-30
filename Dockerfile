@@ -12,6 +12,9 @@ RUN pip install --no-cache-dir psycopg2 \
                                plotly \
 			       nbgitpuller
 
+RUN export NODE_OPTIONS=--max-old-space-size=4096
 RUN jupyter serverextension enable nbgitpuller --sys-prefix
-
-
+RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+RUN jupyter labextension install jupyterlab-plotly
+RUN jupyter labextension install plotlywidget
+RUN unset NODE_OPTIONS
