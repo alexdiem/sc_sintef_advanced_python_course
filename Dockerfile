@@ -10,7 +10,9 @@ RUN apt update \
 USER $NB_UID
 RUN pip install --no-cache-dir psycopg2 \
                                plotly \
-			       nbgitpuller
+			       nbgitpuller \
+			       nodejs \
+			       ipywidgets
 
 RUN export NODE_OPTIONS=--max-old-space-size=4096
 RUN jupyter serverextension enable nbgitpuller --sys-prefix
